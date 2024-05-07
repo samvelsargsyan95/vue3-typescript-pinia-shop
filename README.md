@@ -1,4 +1,4 @@
-# Shop by Samvel Sargsyan with 
+# Shop by Samvel Sargsyan 
 # Vue3 | TypeScript | Pinia | Vite | Axios | Vuetify | SCSS
 
 This is a test project with Vue3, Typescript, Pinia, Vite, Vuetify, Axios, SCSS, BEM
