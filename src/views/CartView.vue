@@ -21,7 +21,7 @@
           </td>
           <td class="text-center">{{ item?.name }}</td>
           <td class="text-center">{{ item?.quantity }}</td>
-          <td class="text-center">{{ item?.price }}</td>
+          <td class="text-center">{{ item?.price.toFixed(2) }}</td>
           <td class="text-center">
             <span
               @click="removeProductFromCart(item.id)"
@@ -33,7 +33,7 @@
         </tr>
         <tr>
           <td colspan="5" class="text-right">
-            <b class="me-3">Total: {{ totalPrice }}</b>
+            <b class="me-3">Total: {{ totalPrice.toFixed(2) }}</b>
             <v-btn
               @click="purchaseOrder"
               color="teal-accent-4"
