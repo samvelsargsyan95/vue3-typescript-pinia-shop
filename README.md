@@ -1,4 +1,5 @@
-# Shop by Samvel Sargsyan with Vue3 | TypeScript | Pinia | Vite | Axios | Vuetify | SCSS
+# Shop by Samvel Sargsyan with 
+# Vue3 | TypeScript | Pinia | Vite | Axios | Vuetify | SCSS
 
 This is a test project with Vue3, Typescript, Pinia, Vite, Vuetify, Axios, SCSS, BEM
 
@@ -44,4 +45,3 @@ yarn build
 
 Once the build process is completed, your application will be ready for deployment in a production environment.
 
-# vue3-typescript-pinia-shop
