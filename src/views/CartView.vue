@@ -130,7 +130,7 @@ export default defineComponent({
     }
 
     const totalPrice = computed(() => {
-      return cartItems.value.reduce((total : number, item : any) => total + item.price, 0);
+      return cartItems.value.reduce((total : number, item : any) => total + item.price * item.quantity, 0);
     });
 
     const purchaseOrder = () => {
