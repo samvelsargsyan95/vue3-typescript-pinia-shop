@@ -1,7 +1,7 @@
 # Shop by Samvel Sargsyan 
-# Vue3 | TypeScript | Pinia | Vite | Axios | Vuetify | SCSS
+# Vue3 | TypeScript | Pinia | Vite | Axios (Rest API) | Vuetify | SCSS | BEM
 
-This is a test project with Vue3, Typescript, Pinia, Vite, Vuetify, Axios, SCSS, BEM
+This is a test project with Vue3, TypeScript, Pinia, Vite, Axios (Rest API), Vuetify, SCSS, BEM
 
 ## 💿 Install
 
