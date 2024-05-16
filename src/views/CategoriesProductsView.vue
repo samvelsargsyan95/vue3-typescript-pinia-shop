@@ -33,17 +33,14 @@ export default defineComponent({
 
     // Using pinia state as reactive variables
     const categoriesStore = useCategoriesStore();
-    const { showCategories } =
-      storeToRefs(categoriesStore);
-
-    const storeId : number = import.meta.env.VITE_STORE_ID;
+    const { showCategories } = storeToRefs(categoriesStore);
     const categories : Ref<any> = ref(null);
     const loading: Ref<boolean> = ref(false);
 
     onMounted(async () => {
       try {
         loading.value = true;
-        categories.value = await getCategories(storeId);
+        categories.value = await getCategories();
         loading.value = false;
       } catch (e) {
         throw e;

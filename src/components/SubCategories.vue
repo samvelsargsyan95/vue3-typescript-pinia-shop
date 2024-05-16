@@ -36,11 +36,9 @@ export default defineComponent({
     const { getSortedProducts, getProducts } = useProductsStore();
     const { setData } = useCategoriesStore();
 
-    const storeId: string = import.meta.env.VITE_STORE_ID;
-
     onMounted(async () => {
       try {
-        await getProducts(storeId);
+        await getProducts();
       } catch (e) {
         throw e;
       }
@@ -50,7 +48,7 @@ export default defineComponent({
       setData({ subcategory });
 
       try {
-        await getSortedProducts(subcategory.id, storeId);
+        await getSortedProducts(subcategory.id);
 
         setData({ showCategories: false });
       } catch (e) {

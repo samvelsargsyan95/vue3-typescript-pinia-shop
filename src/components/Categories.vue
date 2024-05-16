@@ -58,23 +58,14 @@ export default defineComponent({
     // Pinia actions
     const { getSubCategories, setData } = useCategoriesStore();
 
-    const storeId: number = import.meta.env.VITE_STORE_ID;
-    let sortedIds: Ref<number[]> = ref([]);
-
-    // Getting Sub Categories from categories list by sortedIds
-    const subCategories: ComputedRef<Category[]> = computed(() => {
-      return sortedIds.value.length
-        ? props.categories.filter((item: any) =>
-            sortedIds.value.includes(item.id)
-          )
-        : [];
-    });
+    const subCategories: Ref = ref([]);
 
     const getSubs = async (category: Category): Promise<void> => {
       setData({ category });
+      subCategories.value = []
 
       try {
-        sortedIds.value = await getSubCategories(category.id, storeId);
+        subCategories.value = await getSubCategories(category.id);
       } catch (e) {
         throw e;
       }

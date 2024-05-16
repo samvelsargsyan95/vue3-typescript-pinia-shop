@@ -7,7 +7,7 @@ class RequestService {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: import.meta.env.VITE_API_BASE_URL, // Use environment variable
+      baseURL: import.meta.env.VITE_API_BASE_URL + import.meta.env.VITE_STORE_ID, // Use environment variable
       headers: {
         'Content-Type': 'application/json',
       },

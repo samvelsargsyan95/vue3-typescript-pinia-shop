@@ -95,14 +95,13 @@ export default defineComponent({
     const route = useRoute();
 
     const productId: number = route.params.id;
-    const storeId: number = import.meta.env.VITE_STORE_ID;
     let loading: Ref<boolean> = ref(false);
     let productInfo: Ref<Product | null> = ref(null);
 
     onMounted(async () => {
       try {
         loading.value = true;
-        productInfo.value = await getProduct(storeId, productId);
+        productInfo.value = await getProduct(productId);
         loading.value = false;
       } catch (e) {
         throw e;

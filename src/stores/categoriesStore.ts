@@ -15,25 +15,22 @@ export const useCategoriesStore = defineStore("categories", {
   }),
 
   actions: {
-    async getCategories(storeId: number): Promise<void> {
+    async getCategories(): Promise<void> {
       try {
-        const { items } = await requestService.read(`${storeId}/categories`);
+        const { items } = await requestService.read(`categories`);
         return items;
       } catch (err) {
         throw err;
       }
     },
 
-    async getSubCategories(categoryId: number, storeId: number): Promise<void> {
+    async getSubCategories(categoryId: number): Promise<void> {
       try {
-        const { sortedIds } = await requestService.read(
-          `${storeId}/categories/sort?parentCategory=0`
+        const { items } = await requestService.read(
+          `categories?parent=${categoryId}`
         );
-        return sortedIds;
-        /* 
-            As parentCategory I have used 0 to get and show informations, 
-            because with categoryId the response comes empty
-          */
+
+        return items
       } catch (err) {
         throw err;
       }

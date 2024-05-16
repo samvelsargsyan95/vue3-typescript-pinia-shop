@@ -13,19 +13,19 @@ export const useProductsStore = defineStore("products", {
   }),
 
   actions: {
-    async getProducts(storeId: number): Promise<void> {
+    async getProducts(): Promise<void> {
       try {
-        const { items } = await requestService.read(`${storeId}/products`);
+        const { items } = await requestService.read(`products`);
         this.products = items;
       } catch (err) {
         throw err;
       }
     },
 
-    async getSortedProducts( categoryId: number, storeId: number): Promise<void> {
+    async getSortedProducts( categoryId: number): Promise<void> {
       try {
         const { sortedIds } = await requestService.read(
-          `${storeId}/products/sort?parentCategory=${categoryId}`
+          `products/sort?parentCategory=${categoryId}`
         );
 
         this.sortedProductsIds = sortedIds;
@@ -34,9 +34,9 @@ export const useProductsStore = defineStore("products", {
       }
     },
 
-    async getProduct(storeId: number, productId: number): Promise<void> {
+    async getProduct(productId: number): Promise<void> {
       try {
-        const response = await requestService.read(`${storeId}/products/${productId}`);
+        const response = await requestService.read(`products/${productId}`);
         return response
       } catch (err) {
         throw err;
