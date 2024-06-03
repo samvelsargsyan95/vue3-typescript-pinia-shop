@@ -27,8 +27,6 @@
 <script lang="ts">
 import {
   defineComponent,
-  computed,
-  ComputedRef,
   ref,
   Ref,
   PropType,
@@ -54,7 +52,7 @@ export default defineComponent({
     },
   },
 
-  setup(props: any) {
+  setup() {
     // Pinia actions
     const { getSubCategories, setData } = useCategoriesStore();
 

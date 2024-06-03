@@ -34,6 +34,7 @@ export default defineComponent({
     // Using pinia state as reactive variables
     const categoriesStore = useCategoriesStore();
     const { showCategories } = storeToRefs(categoriesStore);
+    
     const categories : Ref<any> = ref(null);
     const loading: Ref<boolean> = ref(false);
 
